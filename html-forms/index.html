@@ -13,9 +13,9 @@
         </div>
       </div>
       <div>
-        <label for="whycode">Why is coding cool?</label>
+        <label for="whycode" >Why is coding cool?</label>
         <div>
-          <select name="whycode">
+          <select name="whycode" id="whycode">
             <option>Select and option</option>
             <option value="interesting">Because it's interesting</option>
             <option value="fun">Because it's fun</option>
@@ -24,21 +24,23 @@
         </div>
       </div>
       <div>
-        <p><label for="code">Favorite Language (choose one)</label></p>
+        <p>Favorite Language (choose one)</p>
         <div>
-          <input type="radio" name="code" value="HTML">HTML
-          <input type="radio" name="code" value="CSS">CSS
-          <input type="radio" name="code" value="Javascript">Javascript
+          <input type="radio" name="HTML" value="HTML"><label for="HTML">HTML</label>
+          <input type="radio" name="CSS" value="CSS"><label for="CSS">CSS</label>
+          <input type="radio" name="Javascript" value="Javascript"><label for="Javascript">Javascript</label>
         </div>
       </div>
       <p><label for="signUp">Would you like to sign up for more information?</label></p>
       <div>
-        <input type="checkbox" name="signUp" value="signUp">Sign me up!
+        <input type="checkbox" name="signUp" id="signUp" value="signUp">Sign me up!
       </div>
-      Comments
       <div>
-        <textarea rows="10" cols="30">
-        </textarea>
+        <label for="comments">Comments</label>
+        <div>
+          <textarea name="comments" id="comments" rows="10" cols="30">
+          </textarea>
+        </div>
       </div>
       <div>
         <input type="submit">
