@@ -1,0 +1,12 @@
+h2 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1,
+p {
+  font-family: 'Roboto Mono', monospace;
+}
+
+body {
+  line-height: 25px;
+}
