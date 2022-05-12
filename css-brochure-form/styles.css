@@ -1,0 +1,56 @@
+h1 {
+  text-align: center;
+  color: #ed6b65;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Brandon Grotesque", sans-serif;
+}
+
+input.submit {
+  color: white;
+  background-color: #ec5d57;
+  border-radius: 15px;
+  border-width: .5px;
+  border: none;
+  height: 30px;
+  width: 85px;
+
+}
+
+div.form {
+ position: relative;
+ margin: 0 auto;
+ width: 50%;
+}
+
+input#email,
+input#name,
+input#location,
+select {
+  height: 40px;
+  width: 100%;
+  border-color: solid rgb(186, 186, 186);
+  border-radius: 5px;
+  border-width: .5px;
+  padding-left: 10px;
+
+}
+
+label {
+  font-family: "Brandon Grotesque", sans-serif;
+  font-size: 12px;
+  margin-left: 2%;
+  font-weight: 500;
+}
+
+div {
+  padding: 5px;
+}
+
+button {
+  margin-top: 50px;
+}
+
+div#submit {
+  text-align: right;
+}
