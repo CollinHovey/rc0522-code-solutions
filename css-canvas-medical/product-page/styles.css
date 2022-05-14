@@ -6,6 +6,27 @@
   margin-top: 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a.header-links-main:visited {
+  color: #294464;
+}
+
+a.header-links:visited {
+  color: rgb(187 187 187);
+}
+
+a.about-links:visited {
+  color: white;
+}
+
+.header-links-products {
+  color: #294464;
+  font-size: 20px;
+}
+
 body {
   font-family: Avenir;
 }

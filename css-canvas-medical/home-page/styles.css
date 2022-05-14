@@ -6,6 +6,18 @@
   margin-top: 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+a.header-links-main:visited {
+  color: #294464;
+}
+
 body {
   font-family: Avenir;
 }
