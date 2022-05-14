@@ -6,8 +6,12 @@
   margin-top: 20px;
 }
 
+body {
+  font-family: Avenir;
+}
+
 .column-one-half-right {
-  flex-basis: 50%;
+  flex-basis: 60%;
   justify-content: flex-end;
 }
 
@@ -41,7 +45,7 @@ h1.header {
 }
 
 div#second-row {
-  background-image: url("images/hero.jpg");
+  background-image: url("../images/hero.jpg");
   background-size: cover;
   margin: 5% 10%;
   height: 700px;

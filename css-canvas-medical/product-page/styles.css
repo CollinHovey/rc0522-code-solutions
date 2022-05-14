@@ -1,0 +1,96 @@
+#header {
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+body {
+  font-family: Avenir;
+}
+
+.column-one-half-right {
+  flex-basis: 60%;
+  justify-content: flex-end;
+}
+
+.column-one-half-left {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.nav {
+  display: flex;
+}
+
+.contact-us {
+  background-color: #294464;
+  border-radius: 4px;
+  color: white;
+  padding: 3%;
+}
+
+div.header-container {
+  border-bottom: 1px solid rgb(196 196 196);
+}
+
+h1.header {
+  margin: 0;
+  color: #294464;
+  font-size: 70px;
+  font-weight: 100;
+  font-family: "Tiempos Headline", sans-serif;
+}
+
+div#second-row {
+  background-image: url("../images/product/product-header.jpg");
+  background-size: cover;
+  margin: 5% 10%;
+  height: 700px;
+}
+
+a.header-links {
+  color: rgb(187 187 187);
+  font-size: 20px;
+}
+
+li.nav {
+  list-style: none;
+  padding-left: 20px;
+}
+
+ul.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.image-background-tint {
+  background-color: rgb(77 77 77 / 30%);
+  background-size: cover;
+  padding: 5%;
+  height: 700px;
+}
+
+p.primary-care {
+  margin-right: 50%;
+  color: white;
+  line-height: 30px;
+  font-size: 20px;
+  padding-bottom: 2%;
+}
+
+h1.primary-care {
+  margin-right: 50%;
+  margin-bottom: 0;
+  color: white;
+  font-size: 50px;
+  font-weight: 100;
+  font-family: "Tiempos Headline", sans-serif;
+}
+
+div.primary-care-body {
+  padding-bottom: 20px;
+}
