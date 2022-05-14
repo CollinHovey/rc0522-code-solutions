@@ -94,3 +94,286 @@ h1.primary-care {
 div.primary-care-body {
   padding-bottom: 20px;
 }
+
+div.third-row-margin {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.third-row {
+  background-color: #fbfbfb;
+}
+
+.column-one-half {
+  flex-basis: 38%;
+}
+
+p.italics {
+  font-style: italic;
+}
+
+p.command {
+  line-height: 30px;
+  font-size: 18px;
+  padding-bottom: 15px;
+}
+
+p.quote {
+  padding-top: 15px;
+  line-height: 22px;
+  font-size: 15px;
+}
+
+.command-learn {
+  color: #608194;
+  font-size: 18px;
+}
+
+.command {
+  color: #54514f;
+}
+
+img.stat {
+  max height: 600px;
+}
+
+h1.command {
+  font-size: 35px;
+  font-weight: 550;
+}
+
+
+
+
+
+div.fourth-row {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.column-one-half-life {
+  flex-basis: 40%;
+}
+
+p.italics {
+  font-style: italic;
+}
+
+p.appointments {
+  line-height: 30px;
+  font-size: 18px;
+  padding-bottom: 15px;
+}
+
+p.quote {
+  padding-top: 15px;
+  line-height: 22px;
+  font-size: 15px;
+}
+
+.appointments-learn {
+  color: #608194;
+  font-size: 18px;
+}
+
+.appointments {
+  color: #54514f;
+}
+
+img.appointments {
+  max-height: 600px;
+  max-width: 550px;
+
+}
+
+h1.appointments {
+  font-size: 35px;
+  font-weight: 550;
+}
+
+div.ready-to-learn {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+
+
+div.fifth-row-margin {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.fifth-row {
+  background-color: #fbfbfb;
+}
+
+.column-one-half-tests {
+  flex-basis: 38%;
+}
+
+p.italics {
+  font-style: italic;
+}
+
+p.tests {
+  line-height: 30px;
+  font-size: 18px;
+  padding-bottom: 15px;
+}
+
+p.quote {
+  padding-top: 15px;
+  line-height: 22px;
+  font-size: 15px;
+}
+
+.tests-learn {
+  color: #608194;
+  font-size: 18px;
+}
+
+.tests {
+  color: #54514f;
+}
+
+img.tests {
+  max height: 600px;
+}
+
+h1.tests {
+  font-size: 35px;
+  font-weight: 550;
+}
+
+
+h1.column-one-half-learn,
+p.column-one-half-learn {
+  color: #6e6e6e;
+}
+
+h1.column-one-half-learn {
+  font-family: "Tiempos Headline", sans-serif;
+}
+
+div.get-started-learn {
+  background-color: #294464;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 40px;
+  font-size: 30px;
+}
+
+div.column-one-half-learn {
+  display: flex;
+  align-items: center;
+}
+
+div.row-about {
+  background-color: #525351;
+}
+
+div.canvas-about {
+  display: flex;
+  margin-left: 10%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+ol.canvas-about,
+ol.canvas-company,
+ol.canvas-product {
+  padding-left: 0;
+}
+
+li.canvas-about {
+  list-style: none;
+  line-height: 30px;
+  text-align: left;
+}
+
+li.canvas-company {
+  list-style: none;
+}
+
+li.canvas-product {
+  list-style: none;
+}
+
+.about,
+.canvas-about,
+.canvas-company,
+.canvas-product {
+  color: white;
+}
+
+.column-one-half-about {
+  display: flex;
+  flex-basis: 50%;
+}
+
+div.about-small-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.column-one-quarter-about {
+  display: flex;
+  flex-basis: 25%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.canvas-product,
+.canvas-company {
+  line-height: 50px;
+  font-size: 20px;
+}
+
+h1.about {
+  font-weight: 200;
+  font-size: 60px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+li.canvas-company,
+li.canvas-product {
+  font-size: 23px;
+}
+
+div.row-footer {
+  background-color: #fafafa;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+li.footer {
+  list-style: none;
+  flex-basis: 15%;
+  font-size: 20px;
+  color: #6e6e6e;
+}
