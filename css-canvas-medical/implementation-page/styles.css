@@ -6,30 +6,16 @@
   margin-top: 20px;
 }
 
-a.header-links {
-  color: rgb(187 187 187);
-  font-size: 20px;
-}
-
 a {
   text-decoration: none;
 }
 
-a.header-links-main:visited {
-  color: #294464;
-}
-
-a.header-links:visited {
-  color: rgb(187 187 187);
-}
-
-a.about-links:visited {
+a:visited {
   color: white;
 }
 
-.header-links-products {
+a.header-links-main:visited {
   color: #294464;
-  font-size: 20px;
 }
 
 .column-one-half-right {
@@ -67,10 +53,15 @@ h1.header {
 }
 
 div#second-row {
-  background-image: url("../images/product/product-header.jpg");
+  background-image: url("../images/implementation/implementation-header.jpg");
   background-size: cover;
   margin: 5% 10%;
   height: 700px;
+}
+
+a.header-links {
+  color: rgb(187 187 187);
+  font-size: 20px;
 }
 
 li.nav {
@@ -84,13 +75,19 @@ ul.nav {
   justify-content: space-between;
 }
 
+a.get-started {
+  background-color: #294464;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 40px;
+  font-size: 30px;
+}
+
 div.image-background-tint {
   background-color: rgb(77 77 77 / 30%);
   background-size: cover;
   padding: 5%;
   height: 700px;
-  display: flex;
-  align-items: center;
 }
 
 p.primary-care {
@@ -110,95 +107,8 @@ h1.primary-care {
   font-family: "Tiempos Headline", sans-serif;
 }
 
-div.third-row-margin {
-  margin-left: 10%;
-  margin-right: 10%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-div.third-row {
-  background-color: #fbfbfb;
-}
-
-.column-one-half {
-  flex-basis: 38%;
-}
-
-p.italics {
-  font-style: italic;
-}
-
-p.command {
-  line-height: 30px;
-  font-size: 18px;
-  padding-bottom: 15px;
-}
-
-p.quote {
-  padding-top: 15px;
-  line-height: 22px;
-  font-size: 15px;
-}
-
-.command-learn {
-  color: #608194;
-  font-size: 18px;
-}
-
-.command {
-  color: #54514f;
-}
-
-img.stat {
-  max-height: 600px;
-}
-
-h1.command {
-  font-size: 35px;
-  font-weight: 550;
-}
-
-div.fourth-row {
-  margin-left: 10%;
-  margin-right: 10%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.column-one-half-life {
-  flex-basis: 40%;
-}
-
-p.appointments {
-  line-height: 30px;
-  font-size: 18px;
-  padding-bottom: 15px;
-}
-
-.appointments-learn {
-  color: #608194;
-  font-size: 18px;
-}
-
-.appointments {
-  color: #54514f;
-}
-
-img.appointments {
-  max-height: 600px;
-  max-width: 550px;
-}
-
-h1.appointments {
-  font-size: 35px;
-  font-weight: 550;
+div.primary-care-body {
+  padding-bottom: 20px;
 }
 
 div.ready-to-learn {
@@ -208,48 +118,6 @@ div.ready-to-learn {
   margin-left: 10%;
   padding-top: 30px;
   padding-bottom: 30px;
-}
-
-div.fifth-row-margin {
-  margin-left: 10%;
-  margin-right: 10%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-div.fifth-row {
-  background-color: #fbfbfb;
-}
-
-.column-one-half-tests {
-  flex-basis: 38%;
-}
-
-p.tests {
-  line-height: 30px;
-  font-size: 18px;
-  padding-bottom: 15px;
-}
-
-.tests-learn {
-  color: #608194;
-  font-size: 18px;
-}
-
-.tests {
-  color: #54514f;
-}
-
-img.tests {
-  max-height: 600px;
-}
-
-h1.tests {
-  font-size: 35px;
-  font-weight: 550;
 }
 
 h1.column-one-half-learn,
@@ -362,4 +230,11 @@ li.footer {
   flex-basis: 15%;
   font-size: 20px;
   color: #6e6e6e;
+}
+
+ul.footer-list {
+  display: flex;
+  padding: 0;
+  margin-left: 10%;
+  justify-content: left;
 }
