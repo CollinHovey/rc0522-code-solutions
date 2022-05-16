@@ -18,6 +18,11 @@ a.header-links-main:visited {
   color: #294464;
 }
 
+a.header-links-implementation {
+  color: #294464;
+  font-size: 20px;
+}
+
 .column-one-half-right {
   flex-basis: 60%;
   justify-content: flex-end;
