@@ -6,8 +6,16 @@
   margin-top: 20px;
 }
 
+body {
+  font-family: Avenir, sans-serif;
+}
+
+img.canvas-header {
+  max-height: 35px;
+}
+
 a.header-links {
-  color: rgb(187 187 187);
+  color: rgb(148 148 148);
   font-size: 20px;
 }
 
@@ -15,12 +23,8 @@ a {
   text-decoration: none;
 }
 
-a.header-links-main:visited {
-  color: #294464;
-}
-
 a.header-links:visited {
-  color: rgb(187 187 187);
+  color: rgb(148 148 148);
 }
 
 a.about-links:visited {
@@ -40,7 +44,6 @@ a.about-links:visited {
 .column-one-half-left {
   display: flex;
   align-items: center;
-  padding-bottom: 20px;
 }
 
 .nav {
@@ -51,7 +54,7 @@ a.about-links:visited {
   background-color: #294464;
   border-radius: 4px;
   color: white;
-  padding: 3%;
+  padding: 2%;
 }
 
 div.header-container {
@@ -59,11 +62,7 @@ div.header-container {
 }
 
 h1.header {
-  margin: 0;
-  color: #294464;
-  font-size: 70px;
-  font-weight: 100;
-  font-family: "Tiempos Headline", sans-serif;
+  margin-bottom: 6%;
 }
 
 div#second-row {
@@ -125,7 +124,18 @@ div.third-row {
 }
 
 .column-one-half {
-  flex-basis: 38%;
+  flex-basis: 45%;
+}
+
+h1.command,
+h1.appointments,
+h1.tests {
+  font-family: "Tiempos Headline", sans-serif;
+}
+
+h1.command {
+  font-size: 35px;
+  font-weight: 550;
 }
 
 p.italics {
@@ -138,15 +148,9 @@ p.command {
   padding-bottom: 15px;
 }
 
-p.quote {
-  padding-top: 15px;
-  line-height: 22px;
-  font-size: 15px;
-}
-
 .command-learn {
   color: #608194;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .command {
@@ -155,11 +159,6 @@ p.quote {
 
 img.stat {
   max-height: 600px;
-}
-
-h1.command {
-  font-size: 35px;
-  font-weight: 550;
 }
 
 div.fourth-row {
@@ -199,6 +198,10 @@ img.appointments {
 h1.appointments {
   font-size: 35px;
   font-weight: 550;
+}
+
+div.row-learn {
+  border-top: 1px solid rgb(196 196 196);
 }
 
 div.ready-to-learn {
@@ -259,6 +262,13 @@ p.column-one-half-learn {
 
 h1.column-one-half-learn {
   font-family: "Tiempos Headline", sans-serif;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+p.column-one-half-learn {
+  font-size: 20px;
+  font-weight: 550;
 }
 
 div.get-started-learn {
@@ -286,16 +296,11 @@ div.canvas-about {
   padding-bottom: 5%;
 }
 
-ol.canvas-about,
-ol.canvas-company,
-ol.canvas-product {
-  padding-left: 0;
-}
-
 li.canvas-about {
   list-style: none;
   line-height: 30px;
   text-align: left;
+  font-size: 20px;
 }
 
 li.canvas-company {
@@ -337,11 +342,18 @@ div.about-small-container {
   font-size: 20px;
 }
 
-h1.about {
-  font-weight: 200;
-  font-size: 60px;
-  margin: 0;
-  margin-bottom: 20px;
+img.about {
+  max-height: 35px;
+  margin-bottom: 24%;
+  margin-top: 15px;
+}
+
+ol.canvas-company,
+ol.canvas-product,
+ol.canvas-about {
+  margin-top: 0;
+  margin-bottom: 0%;
+  padding-left: 0%;
 }
 
 li.canvas-company,
@@ -360,6 +372,14 @@ div.row-footer {
 li.footer {
   list-style: none;
   flex-basis: 15%;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: bolder;
   color: #6e6e6e;
+}
+
+ul.footer-list {
+  display: flex;
+  padding: 0;
+  margin-left: 10%;
+  justify-content: left;
 }
