@@ -1,0 +1,11 @@
+/* exported filterOutNulls */
+function filterOutNulls(values) {
+  var newArray = [];
+  for (let i = 0; i < values.length; i++) {
+    if (values[i] == null) {
+      continue;
+    }
+    newArray.push(values[i]);
+  }
+  return newArray;
+}
