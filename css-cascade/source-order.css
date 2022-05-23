@@ -3,5 +3,9 @@
 }
 
 .different-class {
+  color: indigo;
+}
+
+.other-class {
   color: chartreuse;
 }
