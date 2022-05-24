@@ -1,0 +1,31 @@
+button {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 100%;
+  border: none;
+}
+
+button.on {
+  background-color: rgb(250 234 132);
+  box-shadow: 0 0 40px rgb(255 229 126);
+}
+
+body.on {
+  background-color: rgb(254 249 241);
+}
+
+div.button {
+  margin-top: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.off {
+  background-color: rgb(37 37 37);
+  box-shadow: 5px -20px 0 rgb(12 12 12);
+}
+
+body.off {
+  background-color: rgb(17 17 17);
+}
