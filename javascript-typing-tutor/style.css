@@ -1,0 +1,29 @@
+span.correct {
+  color: #18cd1b;
+}
+
+h1 {
+  text-align: center;
+  font-size: 80px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+div {
+  margin-top: 10%;
+}
+
+span.current-letter {
+  padding-bottom: 5px;
+  color: black;
+  border-bottom: 5px solid black;
+}
+
+span.current-letter-wrong {
+  color: #f80606;
+  padding-bottom: 5px;
+  border-bottom: 5px solid #f80606;
+}
