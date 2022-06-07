@@ -6,7 +6,7 @@ $container.addEventListener('click', changeTab);
 
 function changeTab(event) {
   if (event.target.matches('.tab')) {
-    for (var x in $tabs) {
+    for (var x = 0; x < $tabs.length; x++) {
       if (event.target.textContent === $tabs[x].textContent) {
         event.target.className = 'tab active';
       } else {
@@ -14,7 +14,7 @@ function changeTab(event) {
       }
     }
     event.target.getAttribute('data-view');
-    for (var y in $views) {
+    for (var y = 0; y < $tabs.length; y++) {
       if (event.target.getAttribute('data-view') === $views[y].getAttribute('data-view')) {
         $views[y].className = 'view';
       } else {
