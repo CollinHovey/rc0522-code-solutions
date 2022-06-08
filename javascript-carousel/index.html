@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="column-one-sixth">
+      <i class="fa-solid fa-angle-left go-back fa-5x"></i>
+    </div>
+    <div class="column-two-thirds selection-1">
+      <img src="images/025.png">
+    </div>
+    <div class="column-two-thirds selection-2 hidden">
+      <img src="images/001.png">
+    </div>
+    <div class="column-two-thirds selection-3 hidden">
+      <img src="images/004.png">
+    </div>
+    <div class="column-two-thirds selection-4 hidden">
+      <img src="images/007.png">
+    </div>
+    <div class="column-two-thirds selection-5 hidden">
+      <img src="images/039.png">
+    </div>
+    <div class="column-one-sixth">
+      <i class="fa-solid fa-angle-right go-forward fa-5x"></i>
+    </div>
+    <div class="place">
+      <i class="fa-solid fa-circle place-icon fa-2x selection-1"></i>
+      <i class="fa-regular fa-circle place-icon fa-2x selection-2"></i>
+      <i class="fa-regular fa-circle place-icon fa-2x selection-3"></i>
+      <i class="fa-regular fa-circle place-icon fa-2x selection-4"></i>
+      <i class="fa-regular fa-circle place-icon fa-2x selection-5"></i>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
