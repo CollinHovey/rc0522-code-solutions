@@ -35,14 +35,18 @@ const remove = () => {
 const update = () => {
   const updateEntry = process.argv[3];
   const updateText = process.argv[4];
-  data.notes[updateEntry] = updateText;
-  const newData = JSON.stringify(data, null, 2);
-  fs.writeFile('data.json', newData, 'utf8', err => {
-    if (err) {
-      console.error(err);
-    }
-    console.log('Updated Data');
-  });
+  if (data.notes[updateEntry] !== undefined) {
+    data.notes[updateEntry] = updateText;
+    const newData = JSON.stringify(data, null, 2);
+    fs.writeFile('data.json', newData, 'utf8', err => {
+      if (err) {
+        console.error(err);
+      }
+      console.log('Updated Data');
+    });
+  } else {
+    console.log('There is no entry at', updateEntry);
+  }
 };
 
 if (action === 'read') {
