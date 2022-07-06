@@ -17,7 +17,7 @@ app.get('/api/notes', (req, res) => {
 
 app.get('/api/notes/:id', (req, res) => {
   const checkId = req.params.id;
-  if (!(checkId > 0)) {
+  if (checkId < 1 || !Number.isInteger(checkId) || Number.isNaN(checkId)) {
     res.status(400).json(notIdError);
   } else if (data.notes[checkId] === undefined) {
     const noIdError = {
@@ -62,7 +62,7 @@ app.post('/api/notes', (req, res) => {
 
 app.delete('/api/notes/:id', (req, res) => {
   const checkId = req.params.id;
-  if (!(checkId > 0)) {
+  if (checkId < 1 || !Number.isInteger(checkId) || Number.isNaN(checkId)) {
     res.status(400).json(notIdError);
   } else if (data.notes[checkId] === undefined) {
     const noIdError = {
@@ -93,7 +93,7 @@ app.put('/api/notes/:id', (req, res) => {
   const body = req.body;
   console.log(checkId);
   console.log(body);
-  if (!(checkId > 0)) {
+  if (checkId < 1 || !Number.isInteger(checkId) || Number.isNaN(checkId)) {
     res.status(400).json(notIdError);
   } else if (body.content === undefined || body.content === '') {
     const noContent = {
@@ -120,10 +120,6 @@ app.put('/api/notes/:id', (req, res) => {
       }
     });
   }
-  // invalid id or no content 400
-  // valid id, note doesn't exist 404
-  // error writing to json 500
-  // if worked, 200 w/ updated note object
 })
 
 app.listen(3000, () => {
