@@ -9,12 +9,6 @@ const languages = [
 ];
 
 const doubled = numbers.map(number => number * 2);
-const prices = numbers.map(number => {
-  if (number < 10) {
-    return `$0.0${number}`;
-  } else {
-    return `$0.${number}`;
-  }
-});
+const prices = numbers.map(number => '$' + number.toFixed(2));
 const upperCased = languages.map(word => word.toUpperCase());
 const firstLetter = languages.map(word => word[0]);
