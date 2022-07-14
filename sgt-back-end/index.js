@@ -29,18 +29,65 @@ app.get('/api/grades', (req, res, next) => {
 });
 
 app.post('/api/grades', (req, res, next) => {
-  const test = req.body;
-  if (req.body.name === undefined || req.body.course === undefined || req.body.score === undefined) {
-    console.log(test);
+  if (req.body.name === undefined || req.body.course === undefined || req.body.score === undefined || parseInt(req.body.score) < 0 || parseInt(req.body.score) > 100) {
     res.status(400).json({
       error: 'new grade must contain a valid name, course, and score where score is between 0-100'
     });
   } else {
-    console.log(test);
-    res.json(test);
+    const course = req.body.course;
+    const name = req.body.name;
+    const score = req.body.score;
+    const sql = `
+    insert into "grades" ("course", "name", "score")
+    values ('${course}', '${name}', '${score}')
+    returning *;
+    `;
+    db.query(sql)
+      .then(result => {
+        res.json(result.rows[0]);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({
+          error: 'An unexpected error occurred.'
+        });
+      });
   }
 });
 
+app.put('/api/grades/:gradeId', (req, res, next) => {
+  if (req.body.name === undefined || req.body.course === undefined || req.body.score === undefined || parseInt(req.body.score) < 0 || parseInt(req.body.score) > 100) {
+    res.status(400).json({
+      error: 'new grade must contain a valid name, course, and score where score is between 0-100'
+    });
+  } else {
+    const gradeId = req.params.gradeId;
+    const course = req.body.course;
+    const name = req.body.name;
+    const score = req.body.score;
+    const sql = `
+    update "grades"
+      set  "course" = ${course},
+           "name" = ${name},
+           "score" = ${score}
+    where "gradeId" = ${gradeId}
+    returning *;
+    `;
+    db.query(sql)
+      .then(result => {
+        res.json(result.rows[0]);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({
+          error: 'An unexpected error occurred.'
+        });
+      });
+  }
+  // console.log(gradeId);
+  // res.json(gradeId);
+});
+
 app.listen(3000, () => {
-  console.log('Express server is listening on port 3000');
+  // console.log('Express server is listening on port 3000');
 });
