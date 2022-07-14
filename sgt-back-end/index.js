@@ -17,7 +17,7 @@ app.get('/api/grades', (req, res, next) => {
   `;
   db.query(sql)
     .then(result => {
-      const grades = result;
+      const grades = result.rows;
       res.json(grades);
     })
     .catch(err => {
@@ -28,6 +28,19 @@ app.get('/api/grades', (req, res, next) => {
     });
 });
 
-// app.listen(5432, () => {
-//   console.log('Express server is listening on port 3000');
-// });
+app.post('/api/grades', (req, res, next) => {
+  const test = req.body;
+  if (req.body.name === undefined || req.body.course === undefined || req.body.score === undefined) {
+    console.log(test);
+    res.status(400).json({
+      error: 'new grade must contain a valid name, course, and score where score is between 0-100'
+    });
+  } else {
+    console.log(test);
+    res.json(test);
+  }
+});
+
+app.listen(3000, () => {
+  console.log('Express server is listening on port 3000');
+});
