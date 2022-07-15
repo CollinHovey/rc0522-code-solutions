@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 4rem;
+  padding: 3rem;
+  border-radius: 50%;
+  border: 0.3rem solid black;
+}
+
+.watch:hover {
+  cursor: pointer;
+}
+
+.fa-play,
+.fa-pause {
+  cursor: pointer;
+}
