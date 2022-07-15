@@ -12,21 +12,23 @@ class HotButton extends React.Component {
   }
 
   render() {
+    let btnClass = '';
     if (this.state.counter >= 18) {
-      return <button onClick={this.handleClick} className="btn-lvl-7">Hot Button</button>;
+      btnClass = 'btn-lvl-7';
     } else if (this.state.counter >= 15) {
-      return <button onClick={this.handleClick} className="btn-lvl-6">Hot Button</button>;
+      btnClass = 'btn-lvl-6';
     } else if (this.state.counter >= 12) {
-      return <button onClick={this.handleClick} className="btn-lvl-5">Hot Button</button>;
+      btnClass = 'btn-lvl-5';
     } else if (this.state.counter >= 9) {
-      return <button onClick={this.handleClick} className="btn-lvl-4">Hot Button</button>;
+      btnClass = 'btn-lvl-4';
     } else if (this.state.counter >= 6) {
-      return <button onClick={this.handleClick} className="btn-lvl-3">Hot Button</button>;
+      btnClass = 'btn-lvl-3';
     } else if (this.state.counter >= 3) {
-      return <button onClick={this.handleClick} className="btn-lvl-2">Hot Button</button>;
+      btnClass = 'btn-lvl-2';
     } else {
-      return <button onClick={this.handleClick} className="btn-lvl-1">Hot Button</button>;
+      btnClass = 'btn-lvl-1';
     }
+    return <button onClick={this.handleClick} className={btnClass}>Hot Button</button>;
   }
 }
 
