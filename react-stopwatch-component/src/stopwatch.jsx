@@ -20,17 +20,16 @@ class Stopwatch extends React.Component {
   }
 
   render() {
+    let icon = 'fa-play';
     if (this.state.on) {
-      return <div className='container'>
-        <h1 className="watch">{this.state.counter}</h1>
-        <i onClick={this.handleClick} className="fa-solid fa-pause fa-4x"></i>
-      </div>;
-    } else {
-      return <div className='container'>
-        <h1 className="watch">{this.state.counter}</h1>
-        <i onClick={this.handleClick} className="fa-solid fa-play fa-4x"></i>
-      </div>;
+      icon = 'fa-pause';
     }
+    return (
+      <div className='container'>
+        <h1 className="watch">{this.state.counter}</h1>
+        <i onClick={this.handleClick} className={`fa-solid ${icon} fa-4x`}></i>
+      </div>
+    );
   }
 }
 
