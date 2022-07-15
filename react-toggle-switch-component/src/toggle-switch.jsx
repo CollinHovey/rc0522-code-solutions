@@ -12,11 +12,16 @@ class ToggleSwitch extends React.Component {
   }
 
   render() {
+    let status = 'off';
     if (this.state.button) {
-      return <button onClick={this.handleClick} className='on'><span className='switch switch-on'></span></button>;
-    } else {
-      return <button onClick={this.handleClick} className='off'><span className='switch switch-off'></span></button>;
+      status = 'on';
     }
+
+    return (
+      <button onClick={this.handleClick} className={status}>
+        <span className={`switch switch-${status}`}></span>
+      </button>
+    );
   }
 }
 
