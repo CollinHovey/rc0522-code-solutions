@@ -29,63 +29,115 @@ app.get('/api/grades', (req, res, next) => {
 });
 
 app.post('/api/grades', (req, res, next) => {
-  if (req.body.name === undefined || req.body.course === undefined || req.body.score === undefined || parseInt(req.body.score) < 0 || parseInt(req.body.score) > 100) {
+  const course = req.body.course;
+  const name = req.body.name;
+  const score = Number(req.body.score);
+  if (!name || !course || !score) {
     res.status(400).json({
-      error: 'new grade must contain a valid name, course, and score where score is between 0-100'
+      error: '"name", "course", "score" are required fields'
     });
-  } else {
-    const course = req.body.course;
-    const name = req.body.name;
-    const score = req.body.score;
-    const sql = `
-    insert into "grades" ("course", "name", "score")
-    values ('${course}', '${name}', '${score}')
-    returning *;
-    `;
-    db.query(sql)
-      .then(result => {
-        res.json(result.rows[0]);
-      })
-      .catch(err => {
-        console.error(err);
-        res.status(500).json({
-          error: 'An unexpected error occurred.'
-        });
-      });
+    return;
   }
+  if (score < 0) {
+    res.status(400).json({
+      error: '"score" must be a positive integer'
+    });
+    return;
+  }
+  const sql = `
+  insert into "grades" ("course", "name", "score")
+  values ($1, $2, $3)
+  returning *;
+  `;
+  const params = [course, name, score];
+  db.query(sql, params)
+    .then(result => {
+      res.status(201).json(result.rows[0]);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
 });
 
 app.put('/api/grades/:gradeId', (req, res, next) => {
-  if (req.body.name === undefined || req.body.course === undefined || req.body.score === undefined || parseInt(req.body.score) < 0 || parseInt(req.body.score) > 100) {
+  const gradeId = Number(req.params.gradeId);
+  if (!gradeId || gradeId < 0) {
     res.status(400).json({
-      error: 'new grade must contain a valid name, course, and score where score is between 0-100'
+      error: '"gradeId", must be a positive integer'
     });
-  } else {
-    const gradeId = req.params.gradeId;
-    const course = req.body.course;
-    const name = req.body.name;
-    const score = req.body.score;
-    const sql = `
-    update "grades"
-      set  "course" = ${course},
-           "name" = ${name},
-           "score" = ${score}
-    where "gradeId" = ${gradeId}
-    returning *;
-    `;
-    db.query(sql)
-      .then(result => {
-        res.json(result.rows[0]);
-      })
-      .catch(err => {
-        console.error(err);
-        res.status(500).json({
-          error: 'An unexpected error occurred.'
-        });
-      });
+    return;
   }
-  // console.log(gradeId);
-  // res.json(gradeId);
+  const course = req.body.course;
+  const name = req.body.name;
+  const score = Number(req.body.score);
+  if (!course || !name || !score) {
+    res.status(400).json({
+      error: '"course", "name", and "score" are required fields'
+    });
+    return;
+  }
+  const sql = `
+    update "grades"
+      set  "course" = $1,
+           "name" = $2,
+           "score" = $3
+      where "gradeId" = $4
+      returning *;
+    `;
+  const params = [course, name, score, gradeId];
+  db.query(sql, params)
+    .then(result => {
+      const grade = result.rows[0];
+      if (!grade) {
+        res.status(404).json({
+          error: `cannot find grade with gradeId ${gradeId}`
+        });
+        return;
+      }
+      res.status(200).json(grade);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
+});
+
+app.delete('/api/grades/:gradeId', (req, res, next) => {
+  const gradeId = Number(req.params.gradeId);
+  if (!gradeId || gradeId < 0) {
+    res.status(400).json({
+      error: '"gradeId" must be a positive integer'
+    });
+    return;
+  }
+  const sql = `
+    delete from "grades"
+      where "gradeId" = $1
+    returning *;
+  `;
+  const params = [gradeId];
+  db.query(sql, params)
+    .then(result => {
+      const grade = result.rows[0];
+      if (!grade) {
+        res.status(404).json({
+          error: `cannot find grade with gradeId ${gradeId}`
+        });
+        return;
+      }
+      res.status(200).json(grade);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
 });
 
 app.listen(3000, () => {
