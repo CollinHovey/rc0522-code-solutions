@@ -1,0 +1,35 @@
+button {
+  border-radius: 20rem;
+  padding: 0.1rem 3rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.switch {
+  top: 0.1rem;
+  position: relative;
+  background-color: white;
+  height: 4.2rem;
+  width: 4.2rem;
+  border: 0.3rem solid black;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.off {
+  background-color: rgb(234 234 234);
+}
+
+.switch-off {
+  right: 3rem;
+}
+
+.on {
+  background-color: #6aa84f;
+}
+
+.switch-on {
+  left: 3rem;
+}
