@@ -1,0 +1,43 @@
+button {
+  font-size: 4rem;
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 0.15rem 0.15rem 0.2rem 0 black;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(0.2rem);
+}
+
+.btn-lvl-1 {
+  background-color: #0f0a1d;
+  color: white;
+}
+
+.btn-lvl-2 {
+  background-color: #351c75;
+}
+
+.btn-lvl-3 {
+  background-color: #674ea7;
+}
+
+.btn-lvl-4 {
+  background-color: #e06666;
+}
+
+.btn-lvl-5 {
+  background-color: #f6b26b;
+}
+
+.btn-lvl-6 {
+  background-color: #ff0;
+}
+
+.btn-lvl-7 {
+  background-color: #fff;
+}
