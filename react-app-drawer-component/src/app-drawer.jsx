@@ -27,6 +27,35 @@ class Drawer extends React.Component {
     if (this.state.clicked) {
       nav = 'nav';
     }
+
+    // if (this.state.clicked) {
+    //   return (
+    //     <div>
+    //       <div className={`nav-container ${nav}`}>
+    //         <h1 onClick={this.handleClickOff}>Home</h1>
+    //         <ul>{tabsList}</ul>
+    //       </div>
+    //       <div>
+    //         <div className={`shadow-${this.state.clicked}`} onClick={this.handleClickOff}>
+    //         </div>
+    //         <i className="fa-solid fa-bars fa-3x" onClick={this.handleClickOn}></i>
+    //       </div>
+    //     </div>
+    //   );
+    // } else {
+    //   return (
+    //     <div>
+    //       <div className={`nav-container ${nav}`}>
+    //         <h1 onClick={this.handleClickOff}>Home</h1>
+    //         <ul>{tabsList}</ul>
+    //       </div>
+    //       <div>
+    //         <i className="fa-solid fa-bars fa-3x" onClick={this.handleClickOn}></i>
+    //       </div>
+    //     </div>
+    //   );
+    // }
+
     return (
       <div>
         <div className={`nav-container ${nav}`}>
@@ -34,8 +63,7 @@ class Drawer extends React.Component {
           <ul>{tabsList}</ul>
         </div>
         <div>
-          <div className={`shadow-${this.state.clicked}`} onClick={this.handleClickOff}>
-          </div>
+          <div className={`shadow-${this.state.clicked}`} onClick={this.handleClickOff}></div>
           <i className="fa-solid fa-bars fa-3x" onClick={this.handleClickOn}></i>
         </div>
       </div>
