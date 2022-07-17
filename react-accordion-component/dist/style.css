@@ -1,0 +1,40 @@
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.all-entries {
+  padding-inline-start: 0;
+  list-style: none;
+  width: 45%;
+}
+
+.entry-container {
+  list-style: none;
+}
+
+.entry-header {
+  background-color: rgb(188 188 188);
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 2px solid black;
+}
+
+.entry-header:hover {
+  cursor: pointer;
+}
+
+.entry-description {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 2px solid black;
+}
+
+.clicked-false {
+  display: none;
+}
+
+.clicked-true {
+  display: list-item;
+}
