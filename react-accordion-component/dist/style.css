@@ -31,10 +31,14 @@
   border: 2px solid black;
 }
 
+.clicked-undefined {
+  display: none;
+}
+
 .clicked-false {
   display: none;
 }
 
 .clicked-true {
-  display: list-item;
+  display: block;
 }
