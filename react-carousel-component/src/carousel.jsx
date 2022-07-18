@@ -6,11 +6,6 @@ class Carousel extends React.Component {
     this.state = {
       carouselImage: 0,
       stopTimer: 0,
-      state0: 'solid',
-      state1: 'regular',
-      state2: 'regular',
-      state3: 'regular',
-      state4: 'regular',
       hover: false
     };
     this.timer = this.timer.bind(this);
@@ -22,6 +17,14 @@ class Carousel extends React.Component {
   }
 
   timer() {
+    const input = this.props.images;
+    for (let x = 0; x < input.length; x++) {
+      if (this.state.carouselImage === x) {
+        this.setState({ [`${x}`]: 'solid' });
+      } else {
+        this.setState({ [`${x}`]: 'regular' });
+      }
+    }
     clearInterval(this.state.stopTimer);
     const stopNumber = setInterval(() => {
       const previous = this.state.carouselImage;
@@ -34,107 +37,31 @@ class Carousel extends React.Component {
         this.setState({ carouselImage: this.state.carouselImage + 1 });
       }
       this.setState({
-        [`state${previous}`]: 'regular',
-        [`state${newNumber}`]: 'solid'
+        [`${previous}`]: 'regular',
+        [`${newNumber}`]: 'solid'
       });
     }, 3000);
     this.setState({ stopTimer: stopNumber });
   }
 
-  goTo(event) {
-    let where = '';
+  goTo(id) {
     this.setState({
-      state0: 'regular',
-      state1: 'regular',
-      state2: 'regular',
-      state3: 'regular',
-      state4: 'regular'
+      carouselImage: id,
+      [`${this.state.carouselImage}`]: 'regular',
+      [`${id}`]: 'solid'
     });
-    if (event.target.className.includes('index0')) {
-      this.setState({ state0: 'solid' });
-      where = 0;
-    } else if (event.target.className.includes('index1')) {
-      this.setState({ state1: 'solid' });
-      where = 1;
-    } else if (event.target.className.includes('index2')) {
-      this.setState({ state2: 'solid' });
-      where = 2;
-    } else if (event.target.className.includes('index3')) {
-      this.setState({ state3: 'solid' });
-      where = 3;
-    } else if (event.target.className.includes('index4')) {
-      this.setState({ state4: 'solid' });
-      where = 4;
-    }
-    this.setState({ carouselImage: where });
   }
 
-  hover(event) {
-    if (event.target.className.includes('index0')) {
-      this.setState({ state0: 'solid' });
-    } else if (event.target.className.includes('index1')) {
-      this.setState({ state1: 'solid' });
-    } else if (event.target.className.includes('index2')) {
-      this.setState({ state2: 'solid' });
-    } else if (event.target.className.includes('index3')) {
-      this.setState({ state3: 'solid' });
-    } else if (event.target.className.includes('index4')) {
-      this.setState({ state4: 'solid' });
-    }
-    this.setState({ hover: true });
+  hover(id) {
+    this.setState({
+      hover: true,
+      [`${id}`]: 'solid'
+    });
   }
 
-  leaveHover(event) {
-    if (event.target.className.includes('index0')) {
-      if (this.state.carouselImage === 0) {
-        this.setState({ state0: 'solid' });
-      } else {
-        if (this.state.state0 === 'solid') {
-          this.setState({ state0: 'regular' });
-        } else {
-          this.setState({ state0: 'solid' });
-        }
-      }
-    } else if (event.target.className.includes('index1')) {
-      if (this.state.carouselImage === 1) {
-        this.setState({ state1: 'solid' });
-      } else {
-        if (this.state.state1 === 'solid') {
-          this.setState({ state1: 'regular' });
-        } else {
-          this.setState({ state1: 'solid' });
-        }
-      }
-    } else if (event.target.className.includes('index2')) {
-      if (this.state.carouselImage === 2) {
-        this.setState({ state2: 'solid' });
-      } else {
-        if (this.state.state2 === 'solid') {
-          this.setState({ state2: 'regular' });
-        } else {
-          this.setState({ state2: 'solid' });
-        }
-      }
-    } else if (event.target.className.includes('index3')) {
-      if (this.state.carouselImage === 3) {
-        this.setState({ state3: 'solid' });
-      } else {
-        if (this.state.state3 === 'solid') {
-          this.setState({ state3: 'regular' });
-        } else {
-          this.setState({ state3: 'solid' });
-        }
-      }
-    } else if (event.target.className.includes('index4')) {
-      if (this.state.carouselImage === 4) {
-        this.setState({ state4: 'solid' });
-      } else {
-        if (this.state.state4 === 'solid') {
-          this.setState({ state4: 'regular' });
-        } else {
-          this.setState({ state4: 'solid' });
-        }
-      }
+  leaveHover(id) {
+    if (id !== this.state.carouselImage) {
+      this.setState({ [`${id}`]: 'regular' });
     }
     this.setState({ hover: false });
   }
@@ -147,8 +74,8 @@ class Carousel extends React.Component {
     }
     this.setState({
       carouselImage: last,
-      [`state${last}`]: 'solid',
-      [`state${current}`]: 'regular'
+      [`${last}`]: 'solid',
+      [`${current}`]: 'regular'
     });
   }
 
@@ -160,13 +87,17 @@ class Carousel extends React.Component {
     }
     this.setState({
       carouselImage: next,
-      [`state${next}`]: 'solid',
-      [`state${current}`]: 'regular'
+      [`${next}`]: 'solid',
+      [`${current}`]: 'regular'
     });
   }
 
   render() {
-    // console.log('states', this.state);
+    const input = this.props.images;
+    const allInputs = input.map((image, index) => {
+      const circleId = index;
+      return <i key={index} className={`fa-${this.state[index]} fa-circle fa-2x index${index}`} onClick={() => this.goTo(circleId)} onMouseEnter={() => this.hover(circleId)} onMouseLeave={() => this.leaveHover(circleId)}></i>;
+    });
     return (
       <div className='carousel-container' onLoad={this.timer}>
         <div className='left-container'>
@@ -175,11 +106,7 @@ class Carousel extends React.Component {
         <div className='image-container'>
           <img src={this.props.images[this.state.carouselImage]}></img>
           <div className='circle-holder'>
-            <i className={`fa-${this.state.state0} fa-circle fa-2x index0`} onClick={this.goTo} onMouseEnter={this.hover} onMouseLeave={this.leaveHover}></i>
-            <i className={`fa-${this.state.state1} fa-circle fa-2x index1`} onClick={this.goTo} onMouseEnter={this.hover} onMouseLeave={this.leaveHover}></i>
-            <i className={`fa-${this.state.state2} fa-circle fa-2x index2`} onClick={this.goTo} onMouseEnter={this.hover} onMouseLeave={this.leaveHover}></i>
-            <i className={`fa-${this.state.state3} fa-circle fa-2x index3`} onClick={this.goTo} onMouseEnter={this.hover} onMouseLeave={this.leaveHover}></i>
-            <i className={`fa-${this.state.state4} fa-circle fa-2x index4`} onClick={this.goTo} onMouseEnter={this.hover} onMouseLeave={this.leaveHover}></i>
+            {allInputs}
           </div>
         </div>
         <div className='right-container'>
