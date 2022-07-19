@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"webpack",
-    "watch":"webpack --watch --mode=development --devtool=source-map",
+    "build": "webpack",
+    "watch": "webpack --watch --mode=development --devtool=source-map",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,7 +16,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.6",
+    "@babel/core": "^7.18.9",
     "@babel/plugin-transform-react-jsx": "^7.18.6",
     "babel-loader": "^8.2.5",
     "webpack": "^5.73.0",
