@@ -1,0 +1,52 @@
+User Can Sign Up
+  user clicks on the sign up here button
+  page url is changed to sign up page
+  sign up page is rendered
+  user inputs a username and password
+  username and password states are updated
+  submit with submit button
+  the info from states is used as the body in a fetch post request
+  client sends post request
+  server recieves post request
+  checks if req data is valid
+    if invalid throw error
+  create new variables for username and password
+  create a sql insert query passing the username and password
+  hash password
+  run the database query
+    if error throw error
+  the databasse adds the username and hashed password into the users table
+  the database returns the new table created
+  the server recieves the new table
+  server sends back that everything worked
+  client returns back to sign in page
+
+User Can Sign In
+  user fills out sign in form
+  state is updated with username and password
+  on submit create new variables with states
+  use variables as body in fetch request
+  send to server
+  server takes get request
+  turns body int username and password
+  creates sql select request using username
+  query the database
+  database recieves query
+  database returns the hashed password for username
+  server recieves hashed password
+  verifiies that the database hashed password is the same as the password provided by client
+    if wrong throw error, wrong password
+  if true then create auth token
+  send auth token and username in object back to client
+  client recives the the object and stores in local storage
+  page sees the auth token and renders the home page
+
+User Can Stay Signed In
+  the auth token is saved into the local storage when initially logged in
+  when user has a new session the token is pulled from local storage and saved in state
+
+User Can Sign out
+  User clicks the sign out button
+    clears the token in local storage
+    state is reset back to default
+  the user is returned to sign in page
