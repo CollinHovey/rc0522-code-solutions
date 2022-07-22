@@ -42,8 +42,8 @@ export default class App extends React.Component {
 
   toggleCompleted(todoId) {
     const oldTodo = this.state.todos.find(todo => {
-      return todo.todoId === todoId
-    })
+      return todo.todoId === todoId;
+    });
     const todoIsCompleted = {
       isCompleted: !oldTodo.isCompleted
     };
@@ -56,22 +56,20 @@ export default class App extends React.Component {
     })
       .then(response => response.json()
         .then(data => {
-          console.log('data', data)
           const newTodos = this.state.todos.map(todo => {
             if (todo.todoId === todoId) {
               todo = data;
-              return todo
+              return todo;
             } else {
-              return todo
+              return todo;
             }
-          })
+          });
           this.setState({ todos: newTodos });
         })
       );
   }
 
   render() {
-    console.log(this.state.todos)
     return (
       <div className="container">
         <div className="row">
