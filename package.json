@@ -29,18 +29,4 @@
   },
   "dependencies": {
     "express": "^4.18.1",
-    "react-dom": "^18.2.0"
-  },
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/calvin-tran1/rc0522-code-solutions.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/calvin-tran1/rc0522-code-solutions/issues"
-  },
-  "homepage": "https://github.com/calvin-tran1/rc0522-code-solutions#readme"
-}
+
