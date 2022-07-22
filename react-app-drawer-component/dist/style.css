@@ -1,0 +1,99 @@
+.fa-bars {
+  z-index: 2;
+  position: fixed;
+}
+
+.fa-bars:hover {
+  cursor: pointer;
+}
+
+.shadow-true {
+  transition: ease-in 0.3s;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.shadow-false {
+  transition: ease-in 0.3s;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.nav-container {
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  background-color: white;
+  padding-top: 1rem;
+}
+
+.no-nav {
+  animation: 0.3s;
+  animation-duration: 0.3s;
+  animation-name: slide-left;
+  margin-left: -60%;
+}
+
+.nav {
+  display: block;
+  animation-duration: 0.3s;
+  animation-name: slide-right;
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: -60%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 0%;
+  }
+
+  to {
+    margin-left: -60%;
+  }
+}
+
+h1 {
+  padding-left: 1rem;
+  padding-right: 2rem;
+}
+
+h1:hover {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  padding: 1rem 8rem 1rem 1rem;
+}
+
+li:hover {
+  cursor: pointer;
+  background-color: rgb(0 0 0 / 40%);
+  transition: ease-in-out 0.3s;
+}
+
+ul {
+  padding-inline-start: 0;
+}
